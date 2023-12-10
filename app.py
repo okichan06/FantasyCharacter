@@ -1,5 +1,6 @@
 from flask import Flask, render_template,request
 from SDany5 import create_image
+from translate import create_prompt
 
 app = Flask(__name__) 
 
@@ -13,7 +14,8 @@ def result():
         return render_template('result.html')
     elif request.method == "POST":
         Input_prompt = request.form['Input_prompt']
-        result_img = create_image(Input_prompt)
+        prompt = create_prompt(Input_prompt)
+        result_img = create_image(prompt)
         return render_template('result.html',result = result_img)
 
 if __name__ == "__main__": 
