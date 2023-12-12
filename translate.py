@@ -12,6 +12,6 @@ def create_prompt(Input_prompt):
         en_txt = ', '.join(en_words)
     return base_prompt + en_txt
     
-    if __name__ == "__main__":
-        new_prompt = create_prompt("テスト用の文字です")
-        print(prompt)
+if __name__ == "__main__":
+    new_prompt = create_prompt("テスト用の文字です")
+    print(prompt)
