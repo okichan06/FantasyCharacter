@@ -1,11 +1,14 @@
 <!DOCTYPE html> 
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>resultimage</title>
-  </head>
-  <body>
-     <h1>プロンプトを入力してください</h1>
+
+<head>
+  <meta charset="utf-8">
+  <title>resultimage</title>
+</head>
+
+<body>
+  <main>
+    <h1>プロンプトを入力してください</h1>
     <form action="/result" method="POST">
       <p>
         <label><span>どんな姿になりたい？</span>
@@ -16,10 +19,21 @@
         <input type="submit" value='転生する'>
       </div>
     </form>
+  </main>
+</body>
 
-    <h1>異世界のあなたの姿は…</h1>
+    <div class="box">
+      {% if A==1 %}
+      <p>これから作る画像のプロンプトは</p>
+      <h2 class="prompt"> {{prompt}} </h2>
+      {% else %}
+      <h2 class="prompt">プロンプトを入力してください</h2>
+      {% endif %}
+    </div>
+
+    <!-- <h1>異世界のあなたの姿は…</h1>
     <p>
       <img src="../result_img.png" alt="結果" class="result_image"/>
     </p>
-  </body>
+  </body> -->
 </html>
