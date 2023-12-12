@@ -22,18 +22,25 @@
   </main>
 </body>
 
-    <div class="box">
+    <!-- <div class="box">
       {% if A==1 %}
       <p>これから作る画像のプロンプトは</p>
       <h2 class="prompt"> {{prompt}} </h2>
       {% else %}
       <h2 class="prompt">プロンプトを入力してください</h2>
       {% endif %}
-    </div>
+    </div> -->
 
-    <!-- <h1>異世界のあなたの姿は…</h1>
-    <p>
-      <img src="../result_img.png" alt="結果" class="result_image"/>
-    </p>
-  </body> -->
+    <div class="box">
+      {% if A==1 %}
+      <p>異世界のあなたの姿は…</p>
+      <p>
+        <img src="../result_img.png" alt="結果" class="result_image"/>
+      </p>
+      {% else %}
+      <h2 class="result">プロンプトを入力してください</h2>
+      {% endif %}
+    </div>
+    
+  </body>
 </html>
