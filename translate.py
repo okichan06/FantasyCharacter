@@ -1,19 +1,17 @@
 from googletrans import Translator
 
 def create_prompt(Input_prompt):
-    print("start translating")
-    prompt = "(((super realistic))), (((best quality))),((masterpiece)), ((ultra-detailed)), an anime style"
+    base_prompt = "(((super realistic))), (((best quality))),((masterpiece)), ((ultra-detailed)), an anime style"
     translator = Translator()
     character = Input_prompt
-    jp_words = [character]
-    en_words = []
-    print("I'm ready!")
+    jp_words, en_words = [character],[]
     
     for src in jp_words:
         dst = translator.translate(src, src='ja', dest='en')
         en_words.append(dst.text)
-        prompt = prompt + ', '.join(en_words)
+        en_txt = ', '.join(en_words)
+    return base_prompt + en_txt
     
     if __name__ == "__main__":
-        create_prompt()
+        new_prompt = create_prompt("テスト用の文字です")
         print(prompt)
