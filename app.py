@@ -17,9 +17,9 @@ def result():
         Input_prompt = request.form['Input_prompt']
         prompt = create_prompt(Input_prompt)
         A=1
-        #result_img = create_image(prompt)
-        #return render_template('result.html',result = result_img)
-        return render_template('result.html',prompt=prompt,A=A)
+        result_img = create_image(prompt)
+        return render_template('result.html',result = result_img,A=A)
+        #return render_template('result.html',prompt=prompt,A=A)
 
 if __name__ == "__main__": 
     app.run(debug=True)
