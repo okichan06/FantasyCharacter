@@ -14,4 +14,4 @@ def create_prompt(Input_prompt):
     
 if __name__ == "__main__":
     new_prompt = create_prompt("テスト用の文字です")
-    print(prompt)
+    print(new_prompt)
