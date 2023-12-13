@@ -18,7 +18,7 @@ def create_image(prompt):
         height=256,
         negative_prompt=negative_prompt
     ).images[0]
-    image.save("result_img.png")
+    image.save("static/images/result_img.png")
     print("Success saved: result.png")
 
 if __name__ == "__main__":
