@@ -22,7 +22,8 @@ def create_image(prompt):
     print("Success saved: result.png")
 
 if __name__ == "__main__":
+    prompt=input()
     start_time = time.time()
-    create_image()
+    create_image(prompt)
     end_time = time.time()
     print(f"実行時間: {end_time - start_time}秒")
