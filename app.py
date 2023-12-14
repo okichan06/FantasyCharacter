@@ -8,17 +8,17 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/result',methods=['GET','POST'])
+@app.route('/prompt',methods=['GET','POST'])
 def result():
     A=0
     if request.method == "GET":
-        return render_template('result.html')
+        return render_template('prompt.html')
     elif request.method == "POST":
         Input_prompt = request.form['Input_prompt']
         prompt = create_prompt(Input_prompt)
         A=1
         result_img = create_image(prompt)
-        return render_template('result.html',result = result_img,A=A)
+        return render_template('prompt.html',A=A)
         #return render_template('result.html',prompt=prompt,A=A)
 
 if __name__ == "__main__": 
