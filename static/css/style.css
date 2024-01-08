@@ -1,0 +1,27 @@
+#first-block {
+    background-image: url("static\images\FantasyGlassland5.png");
+    background-size: cover;
+    width: 100%;
+    height: 550px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.prologue {
+    font-size: 15px;
+    color: #ffffff;
+}
+
+#second-block {
+    background-color: #424242;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+.content {
+    font-size: 15px;
+    color: #ffffff;
+}
