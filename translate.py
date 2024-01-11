@@ -1,10 +1,12 @@
 from googletrans import Translator
 
-def create_prompt(Input_prompt):
-    base_prompt = "(((super realistic))), (((best quality))),((masterpiece)), ((ultra-detailed)), an anime style"
+def create_prompt(Input_Chara,Input_Job,Input_Do):
+    base_prompt = "(((super realistic))), (((best quality))),((masterpiece)), ((ultra-detailed)), an anime style, 1male, wolf ears"
     translator = Translator()
-    character = Input_prompt
-    jp_words, en_words = [character],[]
+    character = Input_Chara
+    job = Input_Job
+    Do = Input_Do
+    jp_words, en_words = [character, job, Do],[]
     
     for src in jp_words:
         dst = translator.translate(src, src='ja', dest='en')
