@@ -14,8 +14,10 @@ def result():
     if request.method == "GET":
         return render_template('prompt.html')
     elif request.method == "POST":
-        Input_prompt = request.form['Input_prompt']
-        prompt = create_prompt(Input_prompt)
+        Input_Chara = request.form['Input_Chara']
+        Input_Job = request.form['Input_Job']
+        Input_Do = request.form['Input_Do']
+        prompt = create_prompt(Input_Chara,Input_Job,Input_Do)
         A=1
         result_img = create_image(prompt)
         return render_template('prompt.html',A=A)

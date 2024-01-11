@@ -1,24 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- <body>
-  <main>
-    <h1>あなたの性格・なりたい姿について教えてください</h1>
+
+<section id ="first2">
+  <h1>あなたの性格・なりたい姿について教えてください</h1>
+  <div class="prompt">
     <form action="/prompt" method="POST">
       <p>
-        <label><span>どんな姿になりたい？</span>
-            <input type="text" name="Input_prompt" placeholder="例：賢くて明るい魔法使いの女の子" required>
+        <label><span>あなたの性格を一言で表すと？</span>
+            <br>
+            <input class="input" type="text" name="Input_Chara" placeholder="例：好奇心旺盛" required>
+        </label>
+      </p>
+      <p>
+        <label><span>どんな職業に就きたい？</span>
+          <br>
+          <input class="input" type="text" name="Input_Job" placeholder="例：剣士、鍛冶屋" required>
+        </label>
+      </p>
+      <p>
+        <label><span>どんなことをしたい？</span>
+          <br>
+          <input class="input" type="text" name="Input_Do" placeholder="例：世界を旅する、最強の剣を作る" required>
         </label>
       </p>
       <div class="click_btn">
         <input type="submit" value='転生する'>
       </div>
     </form>
-  </main>
-</body> -->
+  </div>
+</section>
 
 
-<h1>あなたの性格・なりたい姿について教えてください</h1>
+
+
+<!-- <h1>あなたの性格・なりたい姿について教えてください</h1>
 
 <form>
   <div class="mb-3">
@@ -38,7 +54,7 @@
   </div>
  
   <button type="submit" class="btn btn-dark">転生する</button>
-</form>
+</form> -->
 
     <!-- <div class="box">
       {% if A==1 %}
@@ -49,13 +65,13 @@
       {% endif %}
     </div> -->
 
-    <div class="box">
+<section id="second2">
+    <div class="result">
       <p>異世界のあなたの姿は…</p>
       <p>
         <img src="{{ url_for('static', filename='images/result_img.png') }}" alt="結果" class="result_image"/>
       </p>
     </div>
-    
-  </body>
+</section>
 
 {% endblock %}
