@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section id="second2">
+    <div id="loading-screen">
+        <div id="loading-spinner">生成中...</div>
+        <div id="loading-time">ローディング時間: <span id="loading-duration">0.00</span> 秒</div>
+    </div>
+    <div class="result" hidden>
+      <p>異世界のあなたの姿は…</p>
+      <p>
+        <img src="{{ img_path }}" alt="結果" class="result_image"/>
+      </p>
+    </div>
+</section>
+
+<script>
+  // ローディング画面、画像生成の非同期処理
+  $(document).ready(function () {
+    const startTime = new Date().getTime();
+    $('#loading-screen').show();
+
+    // ローディング時間を計算
+    const updateLoadingTime = () => {
+      var currentTime = new Date().getTime();
+      var elapsedSeconds = (currentTime - startTime) / 1000;
+      $('#loading-duration').text(elapsedSeconds.toFixed(2));
+    }
+    const updateInterval = setInterval(updateLoadingTime, 100);
+
+    $.ajax({
+      type: 'POST',
+      url: '/generate_image',
+      data: { prompt: {{ prompt | tojson }} },
+      success: function (data) {
+        clearInterval(updateInterval);
+        $('#loading-screen').hide();
+        $('.result_image').attr('src', `static/images/${data.file_name}`);
+        $('.result').show();
+      },
+      error: function (error) {
+        console.error(error);
+      }
+    });
+  });
+</script>
+
+{% endblock %}

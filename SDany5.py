@@ -16,16 +16,17 @@ def create_image(prompt):
                 pipe.safety_checker = lambda images, **kwargs: (images, None)
         pipe.enable_attention_slicing()
         
+        
         image = pipe(
             prompt,
-            num_inference_steps=10,
+            num_inference_steps=20,
             guidance_scale=7,
             width=256,
             height=256,
             negative_prompt=negative_prompt
         ).images[0]
         image.save("static/images/result_img.png")
-        return True, "Success saved: result.png"
+        return True, "result_img.png"
     except Exception as e:
          return False,str(e)
 

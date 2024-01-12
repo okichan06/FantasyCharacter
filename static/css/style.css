@@ -11,7 +11,7 @@ body{
 header {
   height: 50px;
   width: 100%;
-  background-color: #4B3B69;
+  background-color: #000000;
   position: fixed;
   top: 0;
   z-index: 10;
@@ -169,11 +169,43 @@ header {
 footer{
   width: 100%; /* 幅いっぱいを指定 */
   height: 50px; /* 高さを指定 */
-  background: #4B3B69;/* 背景色を指定 */
+  background: #000000;/* 背景色を指定 */
   text-align: center;
   padding-top: 5px;
 }
 
 .rights{
   color: #ffffff;
+}
+
+/* ローディング画面用 */
+
+#loading-spinner {
+  animation: rotateAnimation 3s linear infinite;
+  color: #ffffff;
+}
+
+#loading-time{
+  color: #ffffff;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  55% {
+    transform: rotate(180deg);
+  }
+  70% {
+    transform: rotate(360deg);
+  }
+  85% {
+    transform: rotate(540deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
 }

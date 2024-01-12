@@ -5,7 +5,7 @@
 <section id ="first2">
   <h1>あなたの性格・なりたい姿について教えてください</h1>
   <div class="prompt">
-    <form action="/prompt" method="POST">
+    <form action="/result" method="POST">
       <p>
         <label><span>あなたの性格を一言で表すと？</span>
             <br>
@@ -27,49 +27,6 @@
         <input type="submit" value='転生する' class="click_btn">
     </form>
   </div>
-</section>
-
-
-
-
-<!-- <h1>あなたの性格・なりたい姿について教えてください</h1>
-
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">あなたの性格を一言で表すと？</label>
-    <input type="text" class="form-control" id="InputChara" aria-describedby="emailHelp" name ="Input_Chara" required>
-    <div id="CharaHelp" class="form-text">例：好奇心旺盛</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">どんな職業に就きたい？</label>
-    <input type="text" class="form-control" id="InputJob" aria-describedby="passwordHelp" name ="Input_Job" required>
-    <div id="JobHelp" class="form-text">例：剣士, 鍛冶屋</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">どんなことをしたい？</label>
-    <input type="text" class="form-control" id="InputDo" aria-describedby="passwordHelp" name ="Input_Do" required>
-    <div id="DoHelp" class="form-text">例：世界を旅する, 最強の武器を作る</div>
-  </div>
- 
-  <button type="submit" class="btn btn-dark">転生する</button>
-</form> -->
-
-    <!-- <div class="box">
-      {% if A==1 %}
-      <p>これから作る画像のプロンプトは</p>
-      <h2 class="prompt"> {{prompt}} </h2>
-      {% else %}
-      <h2 class="prompt">プロンプトを入力してください</h2>
-      {% endif %}
-    </div> -->
-
-<section id="second2">
-    <div class="result">
-      <p>異世界のあなたの姿は…</p>
-      <p>
-        <img src="{{ url_for('static', filename='images/result_img.png') }}" alt="結果" class="result_image"/>
-      </p>
-    </div>
 </section>
 
 {% endblock %}
