@@ -1,7 +1,7 @@
 from googletrans import Translator
 
 def create_prompt(Input_Chara,Input_Job,Input_Do):
-    base_prompt = "(((super realistic))), (((best quality))),((masterpiece)), ((ultra-detailed)), an anime style, 1male, wolf ears"
+    base_prompt = "(((super realistic))), (((best quality))),((masterpiece)), ((ultra-detailed)), an anime style,"
     translator = Translator()
     character = Input_Chara
     job = Input_Job
