@@ -2,7 +2,7 @@ from googletrans import Translator
 import random
 
 def create_prompt(Input_Chara,Input_Job,Input_Do):
-    base_prompt = "(((super realistic))), (((best quality))),((masterpiece)), ((ultra-detailed)), an anime style"
+    base_prompt = "(((super realistic))), (((best quality))),((masterpiece)), ((ultra-detailed)), an anime style, fantasy"
     
     N = random.randint(1, 100)
     if N%2==0:
@@ -13,13 +13,13 @@ def create_prompt(Input_Chara,Input_Job,Input_Do):
     if N<=10:
         base_promptT = Sex +" with dradon horns, "+base_prompt
     elif N<=30:
-        base_promptT = Sex +", elf, in forest, "+base_prompt
+        base_promptT = Sex +", elf, "+base_prompt+", in forest"
     elif N<= 55:
         base_promptT = Sex +" with cat ears, "+base_prompt
     elif N<=80:
         base_promptT = Sex +" with wolf ears, "+base_prompt
     elif N<=87:
-        base_promptT = Sex +", fairy, in forest, "+base_prompt
+        base_promptT = Sex +", fairy, "+base_prompt+", in forest"
     else:
         base_promptT = Sex + ", " +base_prompt
 
